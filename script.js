@@ -7,27 +7,6 @@ const reset = document.querySelector("#reset");
 const result = document.querySelector("#result");
 let validValue = true;
 
-// submit.addEventListener("click", (e) => {
-//   e.preventDefault();
-
-//   console.log("Hello Console!");
-//   const amount = parseInt(initialAmount.value);
-//   const contribution = parseInt(monthlyContribution.value);
-//   const years = parseInt(numberOfYears.value);
-//   const rate = parseInt(interestRate.value);
-
-//   let total = amount;
-//   const annualContribution = contribution * 12;
-
-//   for (let i = 0; i < years; i++) {
-//     total += annualContribution;
-//     total *= (100 + rate) / 100;
-//   }
-
-//   console.log(total.toFixed(2));
-//   return total.toFixed(2);
-// });
-
 const compoundInterest = (amount, contribution, years, rate) => {
   let total = amount;
   const annualContribution = contribution * 12;
@@ -78,23 +57,6 @@ submit.addEventListener("click", (e) => {
     return false;
   }
 
-  // console.log("Hello Console!");
-  // const amount = parseInt(initialAmount.value);
-  // const contribution = parseInt(monthlyContribution.value);
-  // const years = parseInt(numberOfYears.value);
-  // const rate = parseInt(interestRate.value);
-
-  // let total = amount;
-  // const annualContribution = contribution * 12;
-
-  // for (let i = 0; i < years; i++) {
-  //   total += annualContribution;
-  //   total *= (100 + rate) / 100;
-  // }
-
-  // console.log(total.toFixed(2));
-  // return total.toFixed(2);
-
   const amount = Number(initialAmount.value);
   const contibution = Number(monthlyContribution.value);
   const years = Number(numberOfYears.value);
@@ -105,9 +67,6 @@ submit.addEventListener("click", (e) => {
   const regularTotal = calculateRegularAmount(amount, contibution, years);
 
   const difference = compoundedTotal - regularTotal;
-
-  // console.log(compoundedTotal);
-  // return compoundedTotal;
 
   result.textContent = `INITIAL AMOUNT: $${formatNumber(initialAmount.value)}\r\nMONTHLY CONTRIBUTION: $${formatNumber(monthlyContribution.value)}\r\nNUMBER OF YEARS: ${numberOfYears.value}\r\nINTEREST RATE: ${interestRate.value}%\r\n\nFINAL COMPOUNDED VALUE: $${compoundedTotal}\r\nREGULAR AMOUNT: $${formatNumber(regularTotal)}\r\nDIFFERENCE: $${formatNumber(difference)}`;
 
