@@ -5,7 +5,6 @@ const interestRate = document.querySelector("#int-rate");
 const submit = document.querySelector("#submit");
 const reset = document.querySelector("#reset");
 const result = document.querySelector("#result");
-let validValue = true;
 
 const compoundInterest = (amount, contribution, years, rate) => {
   let total = amount;
@@ -68,7 +67,7 @@ submit.addEventListener("click", (e) => {
 
   const difference = compoundedTotal - regularTotal;
 
-  result.textContent = `INITIAL AMOUNT: $${formatNumber(initialAmount.value)}\r\nMONTHLY CONTRIBUTION: $${formatNumber(monthlyContribution.value)}\r\nNUMBER OF YEARS: ${numberOfYears.value}\r\nINTEREST RATE: ${interestRate.value}%\r\n\nFINAL COMPOUNDED VALUE: $${compoundedTotal}\r\nREGULAR AMOUNT: $${formatNumber(regularTotal)}\r\nDIFFERENCE: $${formatNumber(difference)}`;
+  result.textContent = `INITIAL AMOUNT: $${formatNumber(initialAmount.value)}\r\nMONTHLY CONTRIBUTION: $${formatNumber(monthlyContribution.value)}\r\nNUMBER OF YEARS: ${numberOfYears.value}\r\nINTEREST RATE: ${interestRate.value}%\r\n\nFINAL COMPOUNDED VALUE: $${formatNumber(compoundedTotal)}\r\nREGULAR AMOUNT: $${formatNumber(regularTotal)}\r\nDIFFERENCE: $${formatNumber(difference)}`;
 
   return result;
 });
