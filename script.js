@@ -81,3 +81,5 @@ reset.addEventListener("click", (e) => {
 
   return result;
 });
+
+// Add modal to display result
