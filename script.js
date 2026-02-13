@@ -1,3 +1,4 @@
+const calculator = document.querySelector(".calculator");
 const initialAmount = document.querySelector("#init-amount");
 const monthlyContribution = document.querySelector("#contrib");
 const numberOfYears = document.querySelector("#yrs");
@@ -5,6 +6,8 @@ const interestRate = document.querySelector("#int-rate");
 const submit = document.querySelector("#submit");
 const reset = document.querySelector("#reset");
 const result = document.querySelector("#result");
+const modal = document.querySelector(".modal");
+const closeModal = document.querySelector(".close-modal");
 
 const compoundInterest = (amount, contribution, years, rate) => {
   let total = amount;
@@ -67,9 +70,19 @@ submit.addEventListener("click", (e) => {
 
   const difference = compoundedTotal - regularTotal;
 
+  calculator.classList.add("hidden");
+  modal.classList.remove("hidden");
+
   result.textContent = `INITIAL AMOUNT: $${formatNumber(initialAmount.value)}\r\nMONTHLY CONTRIBUTION: $${formatNumber(monthlyContribution.value)}\r\nNUMBER OF YEARS: ${numberOfYears.value}\r\nINTEREST RATE: ${interestRate.value}%\r\n\nFINAL COMPOUNDED VALUE: $${formatNumber(compoundedTotal)}\r\nREGULAR AMOUNT: $${formatNumber(regularTotal)}\r\nDIFFERENCE: $${formatNumber(difference)}`;
 
   return result;
+});
+
+closeModal.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  modal.classList.add("hidden");
+  calculator.classList.remove("hidden");
 });
 
 reset.addEventListener("click", (e) => {
@@ -81,5 +94,3 @@ reset.addEventListener("click", (e) => {
 
   return result;
 });
-
-// Add modal to display result
