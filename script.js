@@ -1,3 +1,4 @@
+// ===== DOM ELEMENTS =====
 const calculator = document.querySelector(".calculator");
 const initialAmount = document.querySelector("#init-amount");
 const monthlyContribution = document.querySelector("#contrib");
@@ -11,6 +12,7 @@ const modal = document.querySelector(".modal");
 const closeModal = document.querySelector(".close-modal");
 const fadeIn = "fade-in 0.25s ease-in";
 
+// ===== CALCULATION LOGIC =====
 const compoundInterest = (amount, contribution, years, rate) => {
   let total = amount;
   const annualContribution = contribution * 12;
@@ -31,6 +33,7 @@ const calculateRegularAmount = (amount, contribution, years) => {
   return Number(total.toFixed(2));
 };
 
+// ===== UTILITIES =====
 const clearFields = () => {
   initialAmount.value = "";
   monthlyContribution.value = "";
@@ -46,6 +49,7 @@ const formatNumber = (
   return new Intl.NumberFormat(locale, options).format(value);
 };
 
+// ===== EVENT LISTENERS =====
 submit.addEventListener("click", (e) => {
   e.preventDefault();
 
