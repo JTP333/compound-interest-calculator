@@ -53,6 +53,13 @@ form .inputs {
   margin-bottom: 3rem;
 }
 
+form .inputs .level-1,
+form .inputs .level-2 {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
 form label {
   display: flex;
   justify-self: start;
@@ -171,6 +178,12 @@ input[type="number"] {
   }
 }
 
+@media (max-width: 1200px) {
+  form .inputs {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 768px) {
   .calculator {
     align-items: center;
@@ -179,11 +192,51 @@ input[type="number"] {
   }
 
   form .inputs {
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  form .inputs .level-1,
+  form .inputs .level-2 {
     flex-direction: column;
-    margin-bottom: 3.75rem;
+    margin-bottom: 2rem;
   }
 
   .buttons {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .heading {
+    font-size: 20px;
+    margin: 1rem 0;
+    line-height: 1.2;
+  }
+
+  form .inputs {
+    margin-bottom: 0;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .heading {
+    font-size: 1rem;
+  }
+
+  form label {
+    margin-bottom: 0;
+  }
+
+  .input[type="number"] {
+    padding: 5px;
+  }
+
+  .buttons {
+    margin-bottom: 0;
   }
 }
