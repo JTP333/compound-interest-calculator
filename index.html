@@ -24,19 +24,32 @@
                 step="0.01"
                 name="init-amount"
                 id="init-amount"
+                required
               />
             </div>
             <div class="contribution">
               <label for="contrib">Monthly Contribution</label>
-              <input type="number" step="0.01" name="contrib" id="contrib" />
+              <input
+                type="number"
+                step="0.01"
+                name="contrib"
+                id="contrib"
+                required
+              />
             </div>
             <div class="years">
               <label for="yrs">Years Invested</label>
-              <input type="number" step="0.01" name="yrs" id="yrs" />
+              <input type="number" step="0.01" name="yrs" id="yrs" required />
             </div>
             <div class="interest-rate">
               <label for="int-rate">Interest Rate</label>
-              <input type="number" step="0.01" name="int-rate" id="int-rate" />
+              <input
+                type="number"
+                step="0.01"
+                name="int-rate"
+                id="int-rate"
+                required
+              />
             </div>
           </div>
           <div class="buttons">
@@ -46,6 +59,7 @@
         </form>
       </div>
       <!-- <div id="result"></div> -->
+      <div class="errorMessage"></div>
       <div class="modal hidden">
         <button class="close-modal">&times;</button>
         <h2>Summary</h2>

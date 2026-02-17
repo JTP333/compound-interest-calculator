@@ -5,6 +5,7 @@ const numberOfYears = document.querySelector("#yrs");
 const interestRate = document.querySelector("#int-rate");
 const submit = document.querySelector("#submit");
 const reset = document.querySelector("#reset");
+const errorMessage = document.querySelector(".errorMessage");
 const result = document.querySelector("#result");
 const modal = document.querySelector(".modal");
 const closeModal = document.querySelector(".close-modal");
@@ -54,7 +55,7 @@ submit.addEventListener("click", (e) => {
     numberOfYears.value === "" ||
     interestRate.value === ""
   ) {
-    result.innerText =
+    errorMessage.innerText =
       "All fields are required -\nplease enter numerical values";
 
     return false;
@@ -70,6 +71,8 @@ submit.addEventListener("click", (e) => {
   const regularTotal = calculateRegularAmount(amount, contibution, years);
 
   const difference = compoundedTotal - regularTotal;
+
+  errorMessage.innerText = "";
 
   calculator.classList.add("hidden");
   modal.style.animation = fadeIn;

@@ -142,12 +142,20 @@ input[type="number"] {
   margin-bottom: 0.75rem;
 }
 
+.errorMessage,
 #result {
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.5;
-  color: var(--primary-color);
   white-space: pre; /* Use for textContent line breaks */
+}
+
+.errorMessage {
+  color: var(--secondary-color);
+}
+
+#result {
+  color: var(--primary-color);
 }
 
 .hidden {
