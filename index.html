@@ -11,45 +11,47 @@
     <div class="container">
       <div class="calculator">
         <div class="heading">
-          <h1>
-            <span>Compound</span> <span>Interest</span> <span>Calculator</span>
-          </h1>
+          <h1>Compound Interest Calculator</h1>
         </div>
         <form action="#">
           <div class="inputs">
-            <div class="initial-amount">
-              <label for="init-amount">Initial Amount</label>
-              <input
-                type="number"
-                step="0.01"
-                name="init-amount"
-                id="init-amount"
-                required
-              />
+            <div class="level-1">
+              <div class="initial-amount">
+                <label for="init-amount">Initial Amount</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  name="init-amount"
+                  id="init-amount"
+                  required
+                />
+              </div>
+              <div class="contribution">
+                <label for="contrib">Monthly Contribution</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  name="contrib"
+                  id="contrib"
+                  required
+                />
+              </div>
             </div>
-            <div class="contribution">
-              <label for="contrib">Monthly Contribution</label>
-              <input
-                type="number"
-                step="0.01"
-                name="contrib"
-                id="contrib"
-                required
-              />
-            </div>
-            <div class="years">
-              <label for="yrs">Years Invested</label>
-              <input type="number" step="0.01" name="yrs" id="yrs" required />
-            </div>
-            <div class="interest-rate">
-              <label for="int-rate">Interest Rate</label>
-              <input
-                type="number"
-                step="0.01"
-                name="int-rate"
-                id="int-rate"
-                required
-              />
+            <div class="level-2">
+              <div class="years">
+                <label for="yrs">Years Invested</label>
+                <input type="number" step="0.01" name="yrs" id="yrs" required />
+              </div>
+              <div class="interest-rate">
+                <label for="int-rate">Interest Rate</label>
+                <input
+                  type="number"
+                  step="0.01"
+                  name="int-rate"
+                  id="int-rate"
+                  required
+                />
+              </div>
             </div>
           </div>
           <div class="buttons">
