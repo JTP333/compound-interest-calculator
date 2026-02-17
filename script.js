@@ -59,7 +59,11 @@ submit.addEventListener("click", (e) => {
     numberOfYears.value === "" ||
     interestRate.value === ""
   ) {
-    errorMessage.innerText =
+    calculator.classList.add("hidden");
+    modal.style.animation = fadeIn;
+    modal.classList.remove("hidden");
+
+    result.innerText =
       "All fields are required -\nplease enter numerical values";
 
     return false;
