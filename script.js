@@ -80,7 +80,7 @@ submit.addEventListener("click", (e) => {
 
   const difference = compoundedTotal - regularTotal;
 
-  errorMessage.innerText = "";
+  result.innerText = "";
 
   calculator.classList.add("hidden");
   modal.style.animation = fadeIn;
