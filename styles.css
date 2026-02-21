@@ -1,3 +1,4 @@
+/* === DEFAULT STYLES === */
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +25,8 @@ body {
   flex-direction: column;
   gap: 2rem;
 }
+
+/* === HEADING & FORM ===  */
 
 .heading {
   font-size: 24px;
@@ -122,6 +125,8 @@ input[type="number"] {
   border-radius: 50px;
 }
 
+/* === MODAL === */
+
 .close-modal {
   position: absolute;
   top: 1.2rem;
@@ -134,11 +139,8 @@ input[type="number"] {
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
+  position: relative;
+  width: 45rem;
   background-color: var(--secondary-color);
   padding: 4rem;
   border-radius: 5px;
@@ -173,9 +175,21 @@ input[type="number"] {
   }
 }
 
+/* === MEDIA QUERIES === */
+
 @media (max-width: 1200px) {
   form .inputs {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 950px) {
+  .modal {
+    width: 40rem;
+  }
+
+  #result {
+    font-size: 1.2rem;
   }
 }
 
@@ -200,13 +214,26 @@ input[type="number"] {
   .buttons {
     flex-direction: column;
   }
+
+  .modal {
+    width: 35rem;
+    padding: 3rem;
+  }
+
+  #result {
+    font-size: 1.15rem;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .heading {
     font-size: 20px;
     margin: 1rem 0;
     line-height: 1.2;
+  }
+
+  form label {
+    margin-bottom: 0;
   }
 
   form .inputs {
@@ -215,15 +242,6 @@ input[type="number"] {
 
   .buttons {
     gap: 10px;
-  }
-}
-
-@media (max-width: 380px) {
-  .heading {
-    font-size: 1rem;
-  }
-
-  form label {
     margin-bottom: 0;
   }
 
@@ -231,7 +249,35 @@ input[type="number"] {
     padding: 5px;
   }
 
-  .buttons {
-    margin-bottom: 0;
+  .modal {
+    width: 23rem;
+    padding: 2rem;
+  }
+
+  #result {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .heading {
+    font-size: 18px;
+    line-height: 1.1;
+    margin-top: 0;
+  }
+
+  form .inputs .level-1,
+  form .inputs .level-2 {
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+
+  .modal {
+    width: 21rem;
+    padding: 2rem;
+  }
+
+  #result {
+    font-size: 0.75rem;
   }
 }
